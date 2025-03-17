@@ -26,6 +26,14 @@ st.subheader("📈 Energy Consumption Over Time")
 fig = px.line(df, x='Date', y='Energy Consumption (kWh)', title='Monthly Energy Consumption')
 st.plotly_chart(fig, use_container_width=True)
 
+# Save the visualization as an image
+image_path = "images/sample_viz.png"
+fig.write_image(image_path)
+
+# Display the saved image in the app
+st.subheader("📸 Energy Consumption Visualization (Image Export)")
+st.image(image_path, caption="Energy Consumption Chart", use_column_width=True)
+
 # Data Table
 st.subheader("🗂️ Data Table")
 st.dataframe(df)
@@ -37,4 +45,4 @@ st.sidebar.markdown("- [LinkedIn Profile](https://linkedin.com/in/yourusername)"
 
 # Footer
 st.markdown("---")
-st.markdown("**© 2025 Your Name - Data Analyst | Visualization Specialist**")
+st.markdown("**© 2025 Jibin James - Data Analyst | Visualization Specialist**")
