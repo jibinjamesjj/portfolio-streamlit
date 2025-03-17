@@ -1,0 +1,4 @@
+streamlit
+pandas
+matplotlib
+plotly       # (if you're using Plotly for visualizations)
