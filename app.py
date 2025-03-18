@@ -12,7 +12,7 @@ st.markdown("### Welcome to my portfolio page. Here I showcase my data analysis/
 
 # Display the saved Power BI screenshot image
 st.subheader("📸 Power BI Visualization Sample")
-st.image("images/sample_viz.png", caption="Power BI Visualization", use_column_width=True)
+st.image("images/sample_viz.png", caption="Power BI Visualization", use_container_width=True)
 
 # Sample Dataset
 @st.cache_data
