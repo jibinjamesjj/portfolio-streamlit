@@ -26,6 +26,10 @@ st.subheader("📈 Energy Consumption Over Time")
 fig = px.line(df, x='Date', y='Energy Consumption (kWh)', title='Monthly Energy Consumption')
 st.plotly_chart(fig, use_container_width=True)
 
+# Display the saved Power BI screenshot image
+st.subheader("📸 Power BI Visualization Sample")
+st.image("images/sample_viz.png", caption="Power BI Visualization", use_column_width=True)
+
 # Save the visualization as an image
 image_path = "images/sample_viz.png"
 fig.write_image(image_path)
@@ -40,8 +44,8 @@ st.dataframe(df)
 
 # Project Links
 st.sidebar.title("🔗 Project Links")
-st.sidebar.markdown("- [GitHub Repo](https://github.com/yourusername/yourproject)")
-st.sidebar.markdown("- [LinkedIn Profile](https://linkedin.com/in/yourusername)")
+st.sidebar.markdown("- [GitHub Repo](https://github.com/jibinjamesjj)")
+st.sidebar.markdown("- [LinkedIn Profile](https://www.linkedin.com/in/jibin-james-58984b143/)")
 
 # Footer
 st.markdown("---")
