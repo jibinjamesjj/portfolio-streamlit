@@ -8,7 +8,11 @@ st.set_page_config(page_title="Jibin James Portfolio", layout="wide")
 
 # Title and Introduction
 st.title("📊 My Data Visualization Portfolio")
-st.markdown("### Welcome to my portfolio page. Here I showcase my data analysis and visualization projects and skills")
+st.markdown("### Welcome to my portfolio page. Here I showcase my data analysis/visualization projects and skills")
+
+# Display the saved Power BI screenshot image
+st.subheader("📸 Power BI Visualization Sample")
+st.image("images/sample_viz.png", caption="Power BI Visualization", use_column_width=True)
 
 # Sample Dataset
 @st.cache_data
@@ -22,21 +26,9 @@ def load_data():
 df = load_data()
 
 # Visualization - Line Chart
-st.subheader("📈 Energy Consumption Over Time")
+st.subheader("📈 World Energy Consumption - Analysis")
 fig = px.line(df, x='Date', y='Energy Consumption (kWh)', title='Monthly Energy Consumption')
 st.plotly_chart(fig, use_container_width=True)
-
-# Display the saved Power BI screenshot image
-st.subheader("📸 Power BI Visualization Sample")
-st.image("images/sample_viz.png", caption="Power BI Visualization", use_column_width=True)
-
-# Save the visualization as an image
-image_path = "images/sample_viz.png"
-fig.write_image(image_path)
-
-# Display the saved image in the app
-st.subheader("📸 Energy Consumption Visualization (Image Export)")
-st.image(image_path, caption="Energy Consumption Chart", use_column_width=True)
 
 # Data Table
 st.subheader("🗂️ Data Table")
