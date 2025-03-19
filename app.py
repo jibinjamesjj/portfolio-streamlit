@@ -23,13 +23,38 @@ if st.button("More Details"):
     - The report also demonstrates decade correlations with primary energy consumption.
     """)
 
-st.header("Top Songs of March 2025")
-st.markdown(
-    """
-    <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    """,
-    unsafe_allow_html=True,
-)
+# Data for top 5 songs
+data = {
+    "Song Name": [
+        "Die With a Smile", 
+        "APT.", 
+        "Seven", 
+        "Flowers", 
+        "luther (with sza)"
+    ],
+    "Total Streams (Millions)": [2238, 1000, 2236, 2236, 1000]
+}
+
+# Creating a DataFrame
+df = pd.DataFrame(data)
+
+# Layout
+st.title("🎵 Top 5 Trending Songs - March 2025")
+st.write("Here are the most streamed songs of March 2025 with their total streams:")
+
+# Bar Chart Visualization
+st.subheader("💽 Total Streams (in Millions)")
+st.bar_chart(df.set_index("Song Name"))
+
+st.markdown("Oh! And while you skim through the portfolio, you can click below and listen to the top tracks.")
+if st.button("Listen here"):
+    st.header("Top Songs of March 2025")
+    st.markdown(
+        """
+        <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        """,
+        unsafe_allow_html=True,
+    )
 
 # Sample Dataset
 @st.cache_data
