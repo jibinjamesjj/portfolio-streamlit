@@ -45,8 +45,18 @@ st.plotly_chart(fig, use_container_width=True)
 st.subheader("🗂️ Data Table")
 st.dataframe(df)
 
+#Bio
+st.title("🧑‍💻 Profile")
+st.sidebar.markdown("**JIbin James -Data Analyst**")
+st.sidebar.markdown("""Hi there, I am a Power BI Developer and analyst.
+    **Experience**: 11 months
+    **Current Position**: AI/ML Intern
+    **Company**: Zummit Infolabs
+    **Skills**: SQL, SSAS, Excel, Power BI, Python, AI/ML
+    """)
+
 # Project Links
-st.sidebar.title("🔗 Project Links")
+st.sidebar.title("🔗 Links")
 st.sidebar.markdown("- [GitHub Repo](https://github.com/jibinjamesjj)")
 st.sidebar.markdown("- [LinkedIn Profile](https://www.linkedin.com/in/jibin-james-58984b143/)")
 
