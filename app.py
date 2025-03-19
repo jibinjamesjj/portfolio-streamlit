@@ -24,6 +24,7 @@ if st.button("More Details"):
     """)
 
 st.markdown("### ⬇️Here are some other charts that I created")
+st.write("")
 
 # Data for top 5 songs
 data = {
@@ -66,6 +67,7 @@ if st.button("Click to Listen"):
         """,
         unsafe_allow_html=True,
     )
+st.write("")
 
 # # Bar Chart Visualization
 # st.subheader("💽 Total Streams (in Millions)")
