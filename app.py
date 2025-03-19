@@ -23,7 +23,7 @@ if st.button("More Details"):
     - The report also demonstrates decade correlations with primary energy consumption.
     """)
 
-st.markdown("## ⬇️Here are some other charts that I created")
+st.markdown("#### ⬇️Here are some other charts that I created")
 
 # Data for top 5 songs
 data = {
@@ -62,17 +62,31 @@ with col1:
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    st.markdown("""Oh! And while you skim through the portfolio,
-        you can click below and listen to the top tracks.""")
-    if st.button("Listen here"):
-        st.header("Top Songs of March 2025")
-        st.markdown(
-            """
-            <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            """,
-            unsafe_allow_html=True,
-        )
+    # Centered Content with HTML + CSS
+    st.markdown(
+        """
+        <div style="display: flex; height: 100%; align-items: center; 
+                    justify-content: center; text-align: center; flex-direction: column;">
+            <p>Oh! And while you skim through the portfolio, <br>
+            you can click below and listen to the top tracks.</p>
 
+            <button style="padding: 8px 24px; background-color: #4CAF50; 
+                           color: #fff; border: none; border-radius: 8px; 
+                           cursor: pointer; margin-top: 10px;" 
+                    onclick="document.getElementById('spotify-embed').style.display='block'">
+                🎧 Listen here
+            </button>
+
+            <div id="spotify-embed" style="display: none; margin-top: 20px;">
+                <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" 
+                        width="300" height="380" frameborder="0" 
+                        allowtransparency="true" allow="encrypted-media">
+                </iframe>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 # # Bar Chart Visualization
 # st.subheader("💽 Total Streams (in Millions)")
 # st.bar_chart(df.set_index("Song Name"), title="💽 Total Streams (in Millions)")
