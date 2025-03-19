@@ -23,6 +23,8 @@ if st.button("More Details"):
     - The report also demonstrates decade correlations with primary energy consumption.
     """)
 
+st.markdown("## ⬇️Here are some other charts that I created")
+
 # Data for top 5 songs
 data = {
     "Song Name": [
@@ -46,7 +48,7 @@ st.write("Here are the most streamed songs of March 2025 with their total stream
 col1, col2 = st.columns([1, 1])  # Adjust ratios to manage width
 
 with col1:
-    st.subheader("💽 Total Streams (in Millions)")
+    st.write("💽 Total Streams (in Millions)")
     # Horizontal Bar Chart
     fig = px.bar(
         df, 
