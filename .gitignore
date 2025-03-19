@@ -1,0 +1,8 @@
+env/
+*.exe
+*.dll
+*.pyd
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store

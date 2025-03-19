@@ -11,8 +11,17 @@ st.title("📊 My Data Visualization Portfolio")
 st.markdown("### Welcome to my portfolio page. Here I showcase my data analysis/visualization projects and skills")
 
 # Display the saved Power BI screenshot image
-st.subheader("📸 Power BI Visualization Sample")
-st.image("images/sample_viz.png", caption="Power BI Visualization", use_container_width=True)
+st.subheader("📈 Power BI Report")
+st.image("images/wec_report.png", caption="Power BI Visualization", use_container_width=True)
+
+# "More Details" Button with Hidden Info
+if st.button("More Details"):
+    st.markdown("""
+    **Report Insights:**
+    - This Power BI report visualizes energy consumption trends across various countries.
+    - It highlights key metrics such as **coal**, **gas**, and **oil production**.
+    - The report also demonstrates decade correlations with primary energy consumption.
+    """)
 
 # Sample Dataset
 @st.cache_data
@@ -29,6 +38,8 @@ df = load_data()
 st.subheader("📈 World Energy Consumption - Analysis")
 fig = px.line(df, x='Date', y='Energy Consumption (kWh)', title='Monthly Energy Consumption')
 st.plotly_chart(fig, use_container_width=True)
+
+#📸
 
 # Data Table
 st.subheader("🗂️ Data Table")
