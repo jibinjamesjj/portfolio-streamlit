@@ -23,6 +23,14 @@ if st.button("More Details"):
     - The report also demonstrates decade correlations with primary energy consumption.
     """)
 
+st.header("Top Songs of March 2025")
+st.markdown(
+    """
+    <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    """,
+    unsafe_allow_html=True,
+)
+
 # Sample Dataset
 @st.cache_data
 def load_data():
