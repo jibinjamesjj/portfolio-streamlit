@@ -44,52 +44,28 @@ df = pd.DataFrame(data)
 st.subheader("🎵 Top 5 Trending Songs - March 2025")
 st.write("Here are the most streamed songs of March 2025 with their total streams:")
 
-# Two-column layout for organized display
-col1, col2 = st.columns([1, 1])  # Adjust ratios to manage width
+st.write("💽 Total Streams (in Millions)")
+# Horizontal Bar Chart
+fig = px.bar(
+    df, 
+    x="Total Streams (Millions)", 
+    y="Song Name", 
+    orientation='h',  # Horizontal bar chart
+    text="Total Streams (Millions)",
+    color="Song Name",  # Optional for colorful chart
+)
+fig.update_traces(textposition='outside')
+st.plotly_chart(fig, use_container_width=True)
 
-with col1:
-    st.write("💽 Total Streams (in Millions)")
-    # Horizontal Bar Chart
-    fig = px.bar(
-        df, 
-        x="Total Streams (Millions)", 
-        y="Song Name", 
-        orientation='h',  # Horizontal bar chart
-        text="Total Streams (Millions)",
-        color="Song Name",  # Optional for colorful chart
-    )
-    fig.update_traces(textposition='outside')
-    st.plotly_chart(fig, use_container_width=True)
-
-with col2:
-    # Centered Content with Flexbox for Vertical & Horizontal Alignment
+st.markdown("### Feel free to listen to some top tracks whilst you are here.")
+if st.button("Click to Listen"):
+    st.header("Top Songs of March 2025")
     st.markdown(
         """
-        <div style="display: flex; height: 100vh; align-items: center; 
-                    justify-content: center; text-align: center; 
-                    flex-direction: column;">
-            <p style="font-size: 18px;">Oh! And while you skim through the portfolio, <br>
-            you can click below and listen to the top tracks.</p>
-
-        </div>
+        <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
     )
-    # Centered Button with Increased Width
-    centered_button = st.columns([2, 3, 2])  # Adjust for spacing
-    with centered_button[1]:  
-        if st.button("🎧 Listen here", key="spotify_button"):
-            st.markdown(
-                """
-                <div style="display: flex; justify-content: center; margin-top: 20px;">
-                    <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" 
-                            width="300" height="380" frameborder="0" 
-                            allowtransparency="true" allow="encrypted-media">
-                    </iframe>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
 
 # # Bar Chart Visualization
 # st.subheader("💽 Total Streams (in Millions)")
