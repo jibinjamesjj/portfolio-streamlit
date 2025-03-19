@@ -39,22 +39,41 @@ data = {
 df = pd.DataFrame(data)
 
 # Layout
-st.title("🎵 Top 5 Trending Songs - March 2025")
+st.subheader("🎵 Top 5 Trending Songs - March 2025")
 st.write("Here are the most streamed songs of March 2025 with their total streams:")
 
-# Bar Chart Visualization
-st.subheader("💽 Total Streams (in Millions)")
-st.bar_chart(df.set_index("Song Name"))
+# Two-column layout for organized display
+col1, col2 = st.columns([1, 1])  # Adjust ratios to manage width
 
-st.markdown("Oh! And while you skim through the portfolio, you can click below and listen to the top tracks.")
-if st.button("Listen here"):
-    st.header("Top Songs of March 2025")
-    st.markdown(
-        """
-        <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        """,
-        unsafe_allow_html=True,
+with col1:
+    st.subheader("💽 Total Streams (in Millions)")
+    # Horizontal Bar Chart
+    fig = px.bar(
+        df, 
+        x="Total Streams (Millions)", 
+        y="Song Name", 
+        orientation='h',  # Horizontal bar chart
+        text="Total Streams (Millions)",
+        color="Song Name",  # Optional for colorful chart
     )
+    fig.update_traces(textposition='outside')
+    st.plotly_chart(fig, use_container_width=True)
+
+with col2:
+    st.markdown("""Oh! And while you skim through the portfolio,
+        you can click below and listen to the top tracks.""")
+    if st.button("Listen here"):
+        st.header("Top Songs of March 2025")
+        st.markdown(
+            """
+            <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            """,
+            unsafe_allow_html=True,
+        )
+
+# # Bar Chart Visualization
+# st.subheader("💽 Total Streams (in Millions)")
+# st.bar_chart(df.set_index("Song Name"), title="💽 Total Streams (in Millions)")
 
 # Sample Dataset
 @st.cache_data
