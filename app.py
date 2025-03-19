@@ -46,7 +46,7 @@ st.subheader("🗂️ Data Table")
 st.dataframe(df)
 
 #Bio
-st.sidebar,title("🧑‍💻 Profile")
+st.sidebar.title("🧑‍💻 Profile")
 st.sidebar.markdown("**JIbin James (Data Analyst)**")
 st.sidebar.markdown("""
     Hi there, I am a Power BI Developer and analyst.
