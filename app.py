@@ -62,34 +62,42 @@ with col1:
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    # Centered Content
+    # Centered Content with Flexbox for Vertical & Horizontal Alignment
     st.markdown(
         """
-        <div style="display: flex; height: 100%; align-items: center; 
+        <div style="display: flex; height: 100vh; align-items: center; 
                     justify-content: center; text-align: center; 
                     flex-direction: column;">
-            <p>Oh! And while you skim through the portfolio, <br>
+            <p style="font-size: 18px;">Oh! And while you skim through the portfolio, <br>
             you can click below and listen to the top tracks.</p>
+
+            <div style="width: 70%;">
+                <button style="padding: 12px 32px; background-color: #4CAF50; 
+                            color: #fff; border: none; border-radius: 8px; 
+                            width: 100%; cursor: pointer;">
+                    🎧 Listen here
+                </button>
+            </div>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    # Centered Button
-    centered_button = st.columns([3, 1, 3])  # Creates space to align the button in the center
-    with centered_button[1]: 
-        if st.button("🎧 Listen here"):
-            st.markdown(
-                """
-                <div style="display: flex; justify-content: center;">
-                    <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" 
-                            width="300" height="380" frameborder="0" 
-                            allowtransparency="true" allow="encrypted-media">
-                    </iframe>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )# # Bar Chart Visualization
+    # Display Spotify embed only when button is clicked
+    if st.button("🎧 Listen here", key="spotify_button"):
+        st.markdown(
+            """
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" 
+                        width="300" height="380" frameborder="0" 
+                        allowtransparency="true" allow="encrypted-media">
+                </iframe>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+# # Bar Chart Visualization
 # st.subheader("💽 Total Streams (in Millions)")
 # st.bar_chart(df.set_index("Song Name"), title="💽 Total Streams (in Millions)")
 
