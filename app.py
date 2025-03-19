@@ -46,13 +46,14 @@ st.subheader("🗂️ Data Table")
 st.dataframe(df)
 
 #Bio
-st.title("🧑‍💻 Profile")
-st.sidebar.markdown("**JIbin James -Data Analyst**")
-st.sidebar.markdown("""Hi there, I am a Power BI Developer and analyst.
-    **Experience**: 11 months
-    **Current Position**: AI/ML Intern
-    **Company**: Zummit Infolabs
-    **Skills**: SQL, SSAS, Excel, Power BI, Python, AI/ML
+st.sidebar,title("🧑‍💻 Profile")
+st.sidebar.markdown("**JIbin James (Data Analyst)**")
+st.sidebar.markdown("""
+    Hi there, I am a Power BI Developer and analyst.
+    - **Experience**: 11 months
+    - **Current Position**: AI/ML Intern
+    - **Company**: Zummit Infolabs
+    - **Skills**: SQL, SSAS, Excel, Power BI, Python, AI/ML
     """)
 
 # Project Links
