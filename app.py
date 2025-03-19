@@ -62,7 +62,7 @@ with col1:
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-    # Centered Text
+    # Centered Content with Flexbox for Vertical & Horizontal Alignment
     st.markdown(
         """
         <div style="display: flex; height: 100vh; align-items: center; 
@@ -70,11 +70,11 @@ with col2:
                     flex-direction: column;">
             <p style="font-size: 18px;">Oh! And while you skim through the portfolio, <br>
             you can click below and listen to the top tracks.</p>
+
         </div>
         """,
         unsafe_allow_html=True
     )
-
     # Centered Button with Increased Width
     centered_button = st.columns([2, 3, 2])  # Adjust for spacing
     with centered_button[1]:  
