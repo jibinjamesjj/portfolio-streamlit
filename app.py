@@ -73,6 +73,26 @@ st.write("")
 # st.subheader("💽 Total Streams (in Millions)")
 # st.bar_chart(df.set_index("Song Name"), title="💽 Total Streams (in Millions)")
 
+#Ukrain War Viz
+def plot_prisoner_exchange():
+    labels = ['Russia's Released', 'Ukraine's Released', 'Wounded Soldiers']
+    values = [175, 175, 22]
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
+
+    plt.figure(figsize=(8, 4))
+    plt.barh(labels, values, color=colors)
+
+    for index, value in enumerate(values):
+        plt.text(value + 2, index, str(value))
+
+    plt.title('Russia-Ukraine Prisoner Exchange Overview')
+    plt.xlabel('Number of Individuals')
+    plt.tight_layout()
+
+    st.pyplot(plt)
+
+plot_prisoner_exchange()
+
 # Sample Dataset
 @st.cache_data
 def load_data():
