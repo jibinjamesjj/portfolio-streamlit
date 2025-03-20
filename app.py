@@ -87,6 +87,7 @@ def plot_language_share():
     )
 
     st.plotly_chart(fig)
+plot_language_share()
 
 # Sample Dataset
 @st.cache_data
