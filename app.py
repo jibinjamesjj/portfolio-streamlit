@@ -71,16 +71,22 @@ st.write("")
 
 #Programming languages viz
 def plot_language_share():
-    languages = ['Python', 'C++', 'Java', 'C', 'C#', 'JavaScript', 'Go', 'SQL', 'Visual Basic', 'Delphi/Object Pascal']
-    shares = [23.85, 11.08, 10.36, 9.53, 4.87, 3.46, 2.78, 2.57, 2.52, 2.15]
+    data = {
+        'Language': ['Python', 'C++', 'Java', 'C', 'C#', 'JavaScript', 'Go', 'SQL', 'Visual Basic', 'Delphi/Object Pascal'],
+        'Share': [23.85, 11.08, 10.36, 9.53, 4.87, 3.46, 2.78, 2.57, 2.52, 2.15]
+    }
 
-    plt.figure(figsize=(8, 6))
-    plt.pie(shares, labels=languages, autopct='%.2f%%', startangle=140, colors=plt.cm.Paired.colors)
-    plt.title('Programming Language Market Share (March 2025)')
-    plt.tight_layout()
+    fig = px.pie(
+        data, 
+        names='Language', 
+        values='Share', 
+        title='Programming Language Market Share (March 2025)',
+        hole=0.3,
+        width=500,  # Reduced size
+        height=400   # Reduced size
+    )
 
-    st.pyplot(plt)
-plot_language_share()
+    st.plotly_chart(fig)
 
 # Sample Dataset
 @st.cache_data
