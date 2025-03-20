@@ -69,29 +69,18 @@ if st.button("Click to Listen"):
     )
 st.write("")
 
-# # Bar Chart Visualization
-# st.subheader("💽 Total Streams (in Millions)")
-# st.bar_chart(df.set_index("Song Name"), title="💽 Total Streams (in Millions)")
+#Programming languages viz
+def plot_language_share():
+    languages = ['Python', 'C++', 'Java', 'C', 'C#', 'JavaScript', 'Go', 'SQL', 'Visual Basic', 'Delphi/Object Pascal']
+    shares = [23.85, 11.08, 10.36, 9.53, 4.87, 3.46, 2.78, 2.57, 2.52, 2.15]
 
-#Ukrain War Viz
-def plot_prisoner_exchange():
-    labels = ['Russia\'s Released', 'Ukraine\'s Released', 'Wounded Soldiers']
-    values = [175, 175, 22]
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
-
-    plt.figure(figsize=(8, 4))
-    plt.barh(labels, values, color=colors)
-
-    for index, value in enumerate(values):
-        plt.text(value + 2, index, str(value))
-
-    plt.title('Russia-Ukraine Prisoner Exchange Overview')
-    plt.xlabel('Number of Individuals')
+    plt.figure(figsize=(8, 6))
+    plt.pie(shares, labels=languages, autopct='%.2f%%', startangle=140, colors=plt.cm.Paired.colors)
+    plt.title('Programming Language Market Share (March 2025)')
     plt.tight_layout()
 
     st.pyplot(plt)
-
-plot_prisoner_exchange()
+plot_language_share()
 
 # Sample Dataset
 @st.cache_data
