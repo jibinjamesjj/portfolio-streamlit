@@ -22,8 +22,24 @@ report_images = [
 
 # Insights for each report
 report_insights = [
-    "Report 1: Energy Consumption Insights over various factors",
-    "Report 2: Cybersecurity incidents overview with financial loss breakdown and response times."
+    "Energy Consumption Insights over various factors",
+    "Cybersecurity incidents overview with financial loss breakdown and response times."
+]
+
+# Detailed insights for the "More Details" button
+detailed_insights = [
+    """
+    **Detailed Insights**
+    - This Power BI report visualizes energy consumption trends across various countries.
+    - It highlights key metrics such as **coal**, **gas**, and **oil production**.
+    - The report also demonstrates decade correlations with primary energy consumption.
+    """,
+    """
+    **Detailed Insights**
+    - Identifies security vulnerabilities by category.
+    - Correlates incident response times with financial loss.
+    - Suggests optimal defense mechanisms for future incidents.
+    """
 ]
 
 # Session state to track the current image index
@@ -46,14 +62,18 @@ current_index = st.session_state['current_index']
 st.image(report_images[current_index], caption=f"Report {current_index + 1}", use_container_width=True)
 st.markdown(f"**Insight:** {report_insights[current_index]}")
 
-# "More Details" Button with Hidden Info
+# "More Details" button for additional insights
 if st.button("More Details"):
-    st.markdown("""
-    **Report Insights:**
-    - This Power BI report visualizes energy consumption trends across various countries.
-    - It highlights key metrics such as **coal**, **gas**, and **oil production**.
-    - The report also demonstrates decade correlations with primary energy consumption.
-    """)
+    st.markdown(detailed_insights[current_index])
+
+# "More Details" Button with Hidden Info
+# if st.button("More Details"):
+#     st.markdown("""
+#     **Report Insights:**
+#     - This Power BI report visualizes energy consumption trends across various countries.
+#     - It highlights key metrics such as **coal**, **gas**, and **oil production**.
+#     - The report also demonstrates decade correlations with primary energy consumption.
+#     """)
 
 st.markdown("### ⬇️Here are some other charts that I created")
 st.write("")
