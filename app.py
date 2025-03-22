@@ -20,16 +20,24 @@ report_images = [
     "images/gct_report.png"
 ]
 
-# Slider for swiping through images
-selected_image_index = st.slider(
-    "Swipe to view reports", 
-    0, 
-    len(report_images) - 1, 
-    0
-)
+# Session state to track the current image index
+if 'current_index' not in st.session_state:
+    st.session_state['current_index'] = 0
+
+# Navigation logic
+col1, col2, col3 = st.columns([1, 6, 1])
+
+with col1:
+    if st.button("⬅️ Previous") and st.session_state['current_index'] > 0:
+        st.session_state['current_index'] -= 1
+
+with col3:
+    if st.button("Next ➡️") and st.session_state['current_index'] < len(report_images) - 1:
+        st.session_state['current_index'] += 1
 
 # Display the selected image
-st.image(report_images[selected_image_index], caption=f"Report {selected_image_index + 1}", use_container_width=True)
+current_image = report_images[st.session_state['current_index']]
+st.image(current_image, caption=f"Report {st.session_state['current_index'] + 1}", use_column_width=True)
 
 # "More Details" Button with Hidden Info
 if st.button("More Details"):
