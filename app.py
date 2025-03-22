@@ -10,9 +10,26 @@ st.set_page_config(page_title="Jibin James Portfolio", layout="wide")
 st.title("📊 My Data Visualization Portfolio")
 st.markdown("### Welcome to my portfolio page. Here I showcase my data analysis/visualization projects and skills")
 
-# Display the saved Power BI screenshot image
-st.subheader("📈 Power BI Report")
-st.image("images/wec_report.png", caption="Power BI Visualization", use_container_width=True)
+# # Display the saved Power BI screenshot image
+# st.subheader("📈 Power BI Report")
+# st.image("images/wec_report.png", caption="Power BI Visualization", use_container_width=True)
+
+# List of Power BI report image paths
+report_images = [
+    "images/wec_report.png",
+    "images/gct_report.png"
+]
+
+# Slider for swiping through images
+selected_image_index = st.slider(
+    "Swipe to view reports", 
+    0, 
+    len(report_images) - 1, 
+    0
+)
+
+# Display the selected image
+st.image(report_images[selected_image_index], caption=f"Report {selected_image_index + 1}", use_container_width=True)
 
 # "More Details" Button with Hidden Info
 if st.button("More Details"):
