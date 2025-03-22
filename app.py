@@ -20,6 +20,12 @@ report_images = [
     "images/gct_report.png"
 ]
 
+# Insights for each report
+report_insights = [
+    "Report 1: Energy Consumption Insights over various factors",
+    "Report 2: Cybersecurity incidents overview with financial loss breakdown and response times."
+]
+
 # Session state to track the current image index
 if 'current_index' not in st.session_state:
     st.session_state['current_index'] = 0
@@ -35,9 +41,10 @@ with col3:
     if st.button("Next ➡️") and st.session_state['current_index'] < len(report_images) - 1:
         st.session_state['current_index'] += 1
 
-# Display the selected image
-current_image = report_images[st.session_state['current_index']]
-st.image(current_image, caption=f"Report {st.session_state['current_index'] + 1}", use_column_width=True)
+# Display the selected image and its insight
+current_index = st.session_state['current_index']
+st.image(report_images[current_index], caption=f"Report {current_index + 1}", use_container_width=True)
+st.markdown(f"**Insight:** {report_insights[current_index]}")
 
 # "More Details" Button with Hidden Info
 if st.button("More Details"):
