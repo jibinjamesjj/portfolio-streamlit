@@ -74,6 +74,10 @@ if st.button("More Details"):
 #     - It highlights key metrics such as **coal**, **gas**, and **oil production**.
 #     - The report also demonstrates decade correlations with primary energy consumption.
 #     """)
+#Space Mission report
+st.markdown("### Something different that I tried")
+st.image("images/SM_report.png", caption="Report", use_container_width=True)
+st.markdown("**Insight:** Space mission details, including the cost and location analysis.")
 
 st.markdown("### ⬇️Here are some other charts that I created")
 st.write("")
