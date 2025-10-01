@@ -175,13 +175,14 @@ st.sidebar.markdown("""
     Hi there, I am a Power BI Developer and analyst.
     - **Experience**: 1 year & 4 months
     - **Expertise**: Data and AI
-    - **Qualification: Master of Computer Applications (MCA)
+    - **Qualification**: Master of Computer Applications (MCA)
     - **Skills**: SQL, SSAS, Excel, Power BI, Python, AI/ML
     """)
 
 # Project Links
 st.sidebar.title("🔗 Links")
 st.sidebar.markdown("- [GitHub Repo](https://github.com/jibinjamesjj)")
+st.sidebar.markdown("- [Certifications](https://drive.google.com/drive/folders/1jNAAu1mnxrHEP4BWUQNOVSyDwvI9OfKX)")
 st.sidebar.markdown("- [LinkedIn Profile](https://www.linkedin.com/in/jibin-james-58984b143/)")
 
 # Footer
