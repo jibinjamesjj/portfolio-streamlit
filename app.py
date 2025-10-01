@@ -85,21 +85,21 @@ st.write("")
 # Data for top 5 songs
 data = {
     "Song Name": [
-        "Die With a Smile", 
-        "APT.", 
-        "Seven", 
-        "Flowers", 
-        "luther (with sza)"
+        "Back to Friends", 
+        "Ordinary", 
+        "Golden", 
+        "Just Keep Watching", 
+        "Tears"
     ],
-    "Total Streams (Millions)": [2238, 1000, 2236, 2236, 1000]
+    "Total Streams (Millions)": [898.99, 1100, 692.77, 318.42, 134.99]
 }
 
 # Creating a DataFrame
 df = pd.DataFrame(data)
 
 # Layout
-st.subheader("🎵 Top 5 Trending Songs - March 2025")
-st.write("Here are the most streamed songs of March 2025 with their total streams:")
+st.subheader("🎵 Top 5 Current Trending Songs")
+st.write("Here are the most trending songs with their total streams:")
 
 st.write("💽 Total Streams (in Millions)")
 # Horizontal Bar Chart
@@ -116,7 +116,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("### Feel free to listen to some top tracks whilst you are here.")
 if st.button("Click to Listen"):
-    st.header("Top Songs of March 2025")
+    st.header("Top Songs of September 2025")
     st.markdown(
         """
         <iframe src="https://open.spotify.com/embed/playlist/4FzLms9h928aX5UaHgoXHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -126,18 +126,18 @@ if st.button("Click to Listen"):
 st.write("")
 
 #Programming languages viz
-st.subheader("📟 Programming Languages Market Share - March 2025")
+st.subheader("📟 Programming Languages Market Share - September 2025")
 def plot_language_share():
     data = {
-        'Language': ['Python', 'C++', 'Java', 'C', 'C#', 'JavaScript', 'Go', 'SQL', 'Visual Basic', 'Delphi/Object Pascal'],
-        'Share': [23.85, 11.08, 10.36, 9.53, 4.87, 3.46, 2.78, 2.57, 2.52, 2.15]
+        'Language': ['Python', 'C++', 'C', 'Java', 'C#', 'JavaScript', 'Visual Basic', 'Go', 'Delphi/Object Pascal', 'Perl'],
+        'Share': [25.98, 8.80, 8.65, 8.35, 6.38, 3.22, 2.84, 2.32, 2.26, 2.03]
     }
 
     fig = px.pie(
         data, 
         names='Language', 
         values='Share', 
-        title='Programming Language Market Share (March 2025)',
+        title='Programming Language Market Share (September 2025)',
         hole=0.3,
         width=500,  # Reduced size
         height=400   # Reduced size
